@@ -1,0 +1,39 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/server.js",
+    "dev": "nodemon ./bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/mentoria-everis/api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mentoria-everis/api/issues"
+  },
+  "homepage": "https://gitlab.com/mentoria-everis/api#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "^0.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.1",
+    "mysql2": "^2.1.0",
+    "nodeman": "^1.1.2",
+    "nodemon": "^2.0.2",
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.4",
+    "uuidv4": "^6.0.6"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^5.5.1"
+  }
+}
