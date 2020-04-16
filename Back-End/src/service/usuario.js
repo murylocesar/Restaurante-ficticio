@@ -68,6 +68,7 @@ async function getAll() {
 }
 
 async function getSearch(req) {
+
   var retorno = await usuario.getSearch(req.query.email);
   
   if (!retorno) {
@@ -93,11 +94,11 @@ async function del(req) {
 
 async function getAuth(req) {
 
-  console.log("body" + req.body.email);
+  const { senha,  email } = req.body;
 
   var retorno = await usuario.getSearch(req.body.email);
 
-  if (!retorno) {
+  if (retorno=='') {
     return {
       statusCode: 400,
       msg: 'E-mail não cadastrado no sistema'
@@ -107,7 +108,7 @@ async function getAuth(req) {
   if(! await bcrypt.comparePassword(req.body.senha, retorno[0].senha)){
     return { 
       statusCode: 401, 
-      msg: 'Senha invalida, tente novamente!'
+      msg: 'Senha invalida, tente novamente!',
     };
   }
 

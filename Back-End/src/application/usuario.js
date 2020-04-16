@@ -48,11 +48,10 @@ async function getAuth(req, res) {
   return await usuario
     .getAuth(req)
     .catch(err => {
-      console.log(err.statusCode);
-      res.status(err.statusCode || 500).send(err);
+      res.status(err.statusCode || 500).send(err.msg);
     })
     .then(q => {
-      return res.status(q.statusCode || 200).send(q);
+      return res.status(q.statusCode || 200).send(q.msg);
     });
 }
 

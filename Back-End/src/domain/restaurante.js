@@ -16,6 +16,9 @@ const Restaurante = mysql.define('tb_restaurantes',
 		nome: {
 			type: Sequelize.STRING(25)
 		},
+		email: {
+			type: Sequelize.STRING(50)
+		},
 		latitude: {
 			type: Sequelize.DOUBLE
 		},
