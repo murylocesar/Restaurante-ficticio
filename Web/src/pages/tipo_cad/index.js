@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/perfil.png';
 
 export default function Logon(){
 
@@ -22,26 +22,23 @@ export default function Logon(){
 
     return (
         <div className="tipo-container">
-        
-            <div className="content">
-            
-                <div className="input-block">
-                    <label className="text">Quem eu sou ?</label>
-                    
-                    <Link className="back-link" to="/register"> 
-                        
-                        Cliente 
 
+            <section className="container">
+                  <img src={logoImg} alt ="Heroes" />
+
+                   <div className="tipo">
+                    <Link className="button" to="/cliente"> 
+                       Eu sou  cliente 
                     </Link> 
-                    
-                    <Link className="back-link" to="/register"> 
-                    
-                        
-                        Restaurante
-
+                    <Link className="button" to="/restaurante">                     
+                       Eu sou  restaurante
                     </Link>
-                </div>
-            </div>
+                </div >
+                <Link className="back-link" to="/">     
+                        <FiArrowLeft size ={ 16 } color="#E02041" /> 
+                        Voltar
+                </Link>          
+            </section>
         </div>
     );
 }

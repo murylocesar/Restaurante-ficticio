@@ -1,6 +1,24 @@
 const restaurante = require('../infrastructure/repository/restaurante');
 
 async function create(req) {
+
+  var email = await restaurante.getSearchEmail(req.body.email);
+
+  if(email!=""){
+    return { 
+      statusCode: 401, 
+      msg: 'E-mail já cadastrado no sistema, tente novamente com outro e-mail'
+    };
+  }
+  var cnpj = await restaurante.getSearchCNPJ(req.body.cnpj);
+
+  if(cnpj!=""){
+    return { 
+      statusCode: 401, 
+      msg: 'CNPJ já cadastrado no sistema, tente novamente'
+    };
+  }
+
   var retorno = await restaurante.create(req);
 
   if (!retorno) {

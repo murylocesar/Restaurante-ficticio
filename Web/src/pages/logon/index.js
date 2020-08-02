@@ -7,12 +7,12 @@ import api from '../../services/api';
 import './styles.css';
 
 
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/perfil.png';
 
 export default function Logon(){
 
-    const [email, setEmail ] = useState('01@gmail.com');
-    const [senha, setSenha ] = useState('1');
+    const [email, setEmail ] = useState('murylocesar2014@gmail.com');
+    const [senha, setSenha ] = useState('12345');
 
     const history = useHistory();
 
@@ -25,8 +25,9 @@ export default function Logon(){
        try{
             const response = await api.post('/usuario/auth', data);
 
-            localStorage.setItem('jwt',response.data);
+            //localStorage.setItem('jwt',response.msg[]);
 
+            console.log(response.data);
             history.push('/profile');
             
        }catch (err){
@@ -39,29 +40,27 @@ export default function Logon(){
         <div className="logon-container">
             <section className="content">
             
-                <img src={ logoImg } alt ="Heroes" />
+                <img src={logoImg} alt ="Heroes" />
             
                 <form onSubmit={handleLogin}>
 
-                    <h1> Faça seu logon </h1>
-
-                    <input
+                    <input  className="email"
                         type="email"
-                        placeholder="E-mail" 
+                        placeholder="Digite seu e-mail" 
                         required 
                         value={ email } 
                         onChange ={ e => setEmail(e.target.value)}
                     />
                     
-                    <input
+                    <input className="password"
                         type="password"
-                        placeholder="Senha" 
+                        placeholder="Digite sua senha" 
                         required 
                         value={ senha } 
                         onChange ={ e => setSenha(e.target.value)}
                     />
 
-                    <button className="button" type="submit">Entrar </button>
+                    <button  className="button" type="submit">Entrar </button>
                     
                     <Link className="back-link" to="/tipo"> 
                     

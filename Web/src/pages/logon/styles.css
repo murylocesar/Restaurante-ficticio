@@ -1,27 +1,46 @@
+body{
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    background: #643d87 url(fundo.jpg) no-repeat top;
+}
+
 .logon-container {
-    width: 100%;
-    max-width: 1120px;
-    height: 100vh;
+    width: 400px;
+    height: 270px;
+    background-color: rgb(255, 255, 255,0.3);
+    -webkit-webkit: border radius 10px;
+    -moz-webkit: border radius 10px;
+ 
+    border-radius: 10px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin-top: 120px;
+
+    text-align: center;
 }
 
-.logon-container section.content {
-    width: 100%;
-    max-width: 350px;
-    margin-right: 30px;
+.logon-container img {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 30px;
 }
 
-.logon-container section.content form {
-    margin-top: 100px;
+.logon-container input {
+    
+    height: 40px ;
+    width: 90%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border:none;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding: 10px 20px 0 40px;
+    
+}
+input.email {
+    background-image: url(icone-usuario.png);
+}
+input.password {
+    background-image: url(icone-cadeado.png);
 }
 
-.logon-container section.content form h1 {
-    font-size: 32px;
-    margin-bottom: 32px;
-}
-.logon-container .content input {
-    margin-top: 5px;
-}

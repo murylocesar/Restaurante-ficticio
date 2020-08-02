@@ -1,53 +1,40 @@
-    .tipo-container {
-        width: 100%;
-        max-width: 1120px;
-        height: 100vh;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .tipo-container .content {
-        width: 100%;
-        padding: 96px;
-        background: #f0f0f5;
-        box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .tipo-container .content section {
-        width: 100%;
-        max-width: 380px;
-    }
-    
-    .tipo-container .content section h1 {
-        margin: 64px 0 32px;
-        font-size: 32px;
-    }
-    
-    .tipo-container .content section p {
-        font-size: 18px;
-        color: #737380;
-        line-height: 32px;
-    }
-    
-    .tipo-container .content  {
-        width: 100%;
-        max-width: 450px;
-    }
-    
-    .tipo-container .content  input {
-        margin-top: 8px;
-    }
-    
-    .tipo-container .content  .input-group {
-        display: flex;
-    }
-    
-    .tipo-container .content .input-group input+input {
-        margin-left: 8px;
-    }
+.tipo-container{
+
+    width: 400px;
+    height: 270px;
+    background-color: rgb(255, 255, 255,0.3);
+    -webkit-webkit: border radius 10px;
+    -moz-webkit: border radius 10px;
+ 
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 120px;
+
+    text-align: center;
+}
+
+.logon-container img {
+   width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 30px;
+}
+
+.tipo-container .button {
+  
+
+    background: #e02041;
+    border-radius: 8px;
+    color: #fff;
+      
+    margin-top: 30px;
+
+    display: inline-block;
+    font-size: 18px;
+  
+    padding: 20px 20px 0 40px;
+}
+
+.container .back-link {
+       margin-top: 130px;
+}

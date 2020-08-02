@@ -4,7 +4,7 @@ const jwt = require('../../validation/webToken');
 
 const router = express.Router();
 
-router.route('/').post(jwt.validateToken, restaurante.create);
+router.route('/').post(restaurante.create);
 router.route('/update').put(jwt.validateToken, restaurante.update);
 
 router.route('/').get(restaurante.getAll);

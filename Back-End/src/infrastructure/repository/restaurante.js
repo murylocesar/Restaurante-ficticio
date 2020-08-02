@@ -23,9 +23,22 @@ async function getSearch(req) {
 		} 
 	});		
 }
-
+async function getSearchEmail(email) {
+	return await Restaurante.findAll({ 
+		where: { 
+			email:email	
+		} 
+	});		
+}
+async function getSearchCNPJ(cnpj) {
+	return await Restaurante.findAll({ 
+		where: { 
+			cnpj:cnpj	
+		} 
+	});		
+}
 async function del(req) {
 	return await Restaurante.destroy({ where: { uuid: req.query.uuid } });
 }
 
-module.exports = {create, update, getAll, getSearch, del };
+module.exports = {create, update, getAll, getSearch, del, getSearchEmail ,getSearchCNPJ };

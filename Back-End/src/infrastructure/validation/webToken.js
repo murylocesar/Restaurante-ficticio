@@ -6,7 +6,7 @@ async function creatToken(userId) {
 
 async function validateToken(req, res, next) {
 
-    const token = req.headers.authorization;
+  /*  const token = req.headers.authorization;
 
     if(!token) return res.status(400).send({
         error:'Token não enviado!'
@@ -19,6 +19,7 @@ async function validateToken(req, res, next) {
         });
     
     });
+*/
     return next();
 }
 

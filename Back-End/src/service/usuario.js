@@ -3,25 +3,21 @@ const bcrypt = require('../infrastructure/validation/bcrypt');
 const jwt = require('./../infrastructure/validation/webToken');
 
 async function create(req) {
-
-   console.log(" " + req.body.email);
-
-  /*var email = await usuario.getSearch(req.body.email);
+  
+  var email = await usuario.getSearch(req.body.email);
 
   if(email!=""){
     return { 
       statusCode: 401, 
       msg: 'E-mail já cadastrado no sistema'
     };
-  }*/
+  }
 
   req.body.senha = await bcrypt.encryption(req.body.senha);
 
   var retorno = await usuario.create(req);
 
-  const token = await jwt.creatToken(retorno._id);
-
-  var id = retorno._id;
+  
   
   if (!retorno) {
     return {
@@ -29,7 +25,10 @@ async function create(req) {
       msg: 'Erro ao inserir a usuario '
       };
   }
-  return { id, token };
+   return {
+      statusCode: 200,
+      msg: 'Cadastrado com sucesso'
+      };
 }
 
 async function update(req) {
@@ -92,7 +91,7 @@ async function del(req) {
   return retorno;
 }
 
-async function getAuth(req) {
+async function getAuth(req,response) {
 
   const { senha,  email } = req.body;
 
@@ -114,6 +113,13 @@ async function getAuth(req) {
 
   const token = await jwt.creatToken(retorno._id);
 
-  return token;
+  console.log(token);
+
+  
+ return { 
+      statusCode: 200, 
+      msg:token
+};
+  
 }
-module.exports ={create , update, getAll, getSearch, del, getAuth};
+module.exports = {create , update, getAll, getSearch, del, getAuth};
